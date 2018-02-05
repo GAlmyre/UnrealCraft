@@ -14,7 +14,6 @@ class UNREALCRAFT_API AUnit : public ASelectable
 {
 	GENERATED_BODY()
 	
-	
 public:
 
 	AUnit();
@@ -24,9 +23,21 @@ public:
 	// the behavior tree used by the unit
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 	class UBehaviorTree* BehaviorTree;
-/*
+
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
-	class UUnitMovementComponent* MovementComp;
-	*/
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Move")
+	float MoveSpeed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attack")
+	float AttackPower;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attack")
+	float AttackSpeed;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	float MaxHealth;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	float CurrentHealth;
 };

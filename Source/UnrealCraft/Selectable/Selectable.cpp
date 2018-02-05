@@ -15,7 +15,6 @@ ASelectable::ASelectable()
 void ASelectable::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame

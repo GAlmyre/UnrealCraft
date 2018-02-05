@@ -6,11 +6,9 @@
 
 AUnit::AUnit()
 {
-	//MovementComp = CreateDefaultSubobject<UUnitMovementComponent>(TEXT("MovementComp"));
 }
 
 void AUnit::BeginPlay()
 {
 	Super::BeginPlay();
-
 }

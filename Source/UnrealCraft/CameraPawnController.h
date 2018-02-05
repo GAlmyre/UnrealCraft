@@ -51,6 +51,14 @@ public:
 
 	// Is the player drawing a selection box
 	bool bIsSelecting;
+
+	// resources
+	UPROPERTY(VisibleAnywhere, Category = "Resources")
+	int StoneCount = 0;
+
+	UPROPERTY(EditAnywhere, Category = "Resources")
+	int WoodCount = 0;
+
 protected:
 	void SetupInputComponent();
 
