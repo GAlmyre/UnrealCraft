@@ -18,6 +18,9 @@ void ACameraPawnController::BeginPlay()
 {
 	Super::BeginPlay();
 	bShowMouseCursor = true;
+	
+	// activate the timer for resources gathering
+	GetWorld()->GetTimerManager().SetTimer(ResourceTimer, this, &ACameraPawnController::IncreaseResources, 1.0f, true, 0.0f);
 }
 
 void ACameraPawnController::Tick(float DeltaSeconds)
@@ -127,4 +130,12 @@ void ACameraPawnController::MoveOrder()
 			Controller->ExecuteOrder(CurrentOrder);
 		}
 	}	
+}
+
+void ACameraPawnController::IncreaseResources()
+{
+	WoodCount += WoodPerSecond;
+	StoneCount += StonePerSecond;
+
+	UE_LOG(LogTemp, Warning, TEXT("Increase resources called"));
 }

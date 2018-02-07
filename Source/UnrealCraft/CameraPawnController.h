@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "TimerManager.h"
 #include "GameFramework/PlayerController.h"
 #include "CameraPawnController.generated.h"
 
@@ -77,6 +78,8 @@ protected:
 
 	void MoveOrder();
 
+	void IncreaseResources();
+
 	// store the units selected by the player
 	UPROPERTY(VisibleAnywhere, Category = "Selection")
 	TArray<class ASelectable*> CurrentSelection;
@@ -87,7 +90,14 @@ protected:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Resources")
 	int StoneCount = 0;
 
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Resources")
+	int StonePerSecond = 1;
+
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Resources")
 	int WoodCount = 0;
 
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Resources")
+	int WoodPerSecond = 5;
+
+	FTimerHandle ResourceTimer;
 };
